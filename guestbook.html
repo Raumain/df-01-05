@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSync Solutions ::: Guestbook</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<table class="page-wrapper">
+    <tbody>
+    <tr>
+        <td colspan="2" class="header">
+            <!-- Header from index.html, modified for this page -->
+            <table>
+                <tbody>
+                <tr>
+                    <td style="width:60px; padding:8px; border:none; vertical-align:middle;">
+                        <div class="logo-placeholder">
+                            <div style="font-size: 8px;"><img src="/assets/logo.png" width="100"></div>
+                        </div>
+                    </td>
+                    <td style="padding:8px; border:none; vertical-align:middle;">
+                        <h1 style="font-size: 14px; color: #000; margin: 0; font-weight: bold;" data-i18n="companyTitle">MindSync Solutions</h1>
+                        <div style="font-size: 12px; color: #666; margin-top: 2px;" data-i18n="protocolVersion">Consciousness Transfer Protocol v2.0</div>
+                    </td>
+                    <td style="text-align:right; padding:8px; border:none; vertical-align:middle;">
+                        <div class="nav-menu" style="margin-bottom: 6px;">
+                          <a onclick="goToPage('home')"><span data-i18n="home">Home</span></a> | 
+                          <a onclick="goToPage('scanner')"><span data-i18n="scanner">Scanner</span></a> | 
+                          <a onclick="goToPage('pricing')"><span data-i18n="pricing">Pricing</span></a> |
+                          <a onclick="goToPage('store')"><span data-i18n="store">Store</span></a> |
+                          <span data-i18n="guestbook">Guestbook</span>
+                        </div>
+                        <div class="lang-toggle">
+                          <button data-lang="en">EN</button>
+                          <button data-lang="fr">FR</button>
+                        </div>
+                      </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:180px; vertical-align:top; padding:0; border:none;">
+            <div class="ad-sidebar" id="adSidebar"></div>
+          </td>
+        <td style="vertical-align:top; padding:0; border:none;">
+            <div class="content">
+                <h1 data-i18n="guestbookTitle">Client Testimonials</h1>
+                <p data-i18n="guestbookDescription">Read what our synergized clients have to say about their new digital existence!</p>
+
+                <table class="content-table" style="width: 100%; font-size: 12px; margin-top: 20px;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 150px; vertical-align: top;">
+                                <strong data-i18n="guest1Name">xX_CyberDude_Xx</strong><br>
+                                <span style="font-size: 12px;" data-i18n="guest1Date">Date: 2001-03-15</span>
+                            </td>
+                            <td>
+                                <p data-i18n="guest1Comment">"MindSync is AWESOME! I haven't eaten or slept in three weeks. My productivity is through the roof. I even forgot what my physical body looked like lol. 10/10 would upload again."</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <strong data-i18n="guest2Name">CEOBillionaire_78</strong><br>
+                                <span style="font-size: 12px;" data-i18n="guest2Date">Date: 2000-11-02</span>
+                            </td>
+                            <td>
+                                <p data-i18n="guest2Comment">"A paradigm shift in human potential. My entire board of directors has been synergized. Our quarterly reports are now generated in 0.02 seconds. This is the future of business."</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <strong data-i18n="guest3Name">-=Lara_C.=-</strong><br>
+                                <span style="font-size: 12px;" data-i18n="guest3Date">Date: 2002-01-20</span>
+                            </td>
+                            <td>
+                                <p data-i18n="guest3Comment">"My consciousness transfer was only 87.4% complete and I feel great! Sure, I can't remember my childhood, but the free 1.44 MB of mental storage is totally worth it. The pop-up ads in my thoughts are a bit annoying though."</p>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td style="vertical-align: top;">
+                                <strong data-i18n="guest4Name">Admin</strong><br>
+                                <span style="font-size: 12px;" data-i18n="guest4Date">Date: 1999-12-31</span>
+                            </td>
+                            <td>
+                                <p data-i18n="guest4Comment">"This guestbook is now CLOSED to new entries to prevent spam. Thanks for all the great memories!"</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="footer">
+            <div style="margin-top: 8px; font-size: 10px;">
+                © 2026 MindSync Solutions Inc. | All Rights Reserved
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="app.js"></script>
+<script src="mousetrail.js"></script>
+<script>
+    setDocumentTitle('guestbookPageTitle', 'MindSync Solutions ::: Guestbook');
+    document.addEventListener('DOMContentLoaded', function() {
+      renderAdSidebar('adSidebar', 3);
+    });
+</script>
+
+</body>
+</html>

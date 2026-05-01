@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - MindSync Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <table class="page-wrapper">
+    <tbody>
+      <tr>
+        <td colspan="2" class="header">
+            <!-- Header from index.html, modified for this page -->
+            <table>
+                <tbody>
+                <tr>
+                    <td style="width:60px; padding:8px; border:none; vertical-align:middle;">
+                        <div class="logo-placeholder">
+                            <div style="font-size: 8px;"><img src="/assets/logo.png" width="100"></div>
+                        </div>
+                    </td>
+                    <td style="padding:8px; border:none; vertical-align:middle;">
+                        <h1 style="font-size: 14px; color: #000; margin: 0; font-weight: bold;" data-i18n="companyTitle">MindSync Solutions</h1>
+                        <div style="font-size: 12px; color: #666; margin-top: 2px;" data-i18n="protocolVersion">Consciousness Transfer Protocol v2.0</div>
+                    </td>
+                    <td style="text-align:right; padding:8px; border:none; vertical-align:middle;">
+                        <div class="nav-menu" style="margin-bottom: 6px;">
+                          <a onclick="goToPage('home')"><span data-i18n="home">Home</span></a> | 
+                          <a onclick="goToPage('scanner')"><span data-i18n="scanner">Scanner</span></a> | 
+                          <a onclick="goToPage('pricing')"><span data-i18n="pricing">Pricing</span></a> |
+                          <a onclick="goToPage('store')"><span data-i18n="store">Store</span></a> |
+                          <a onclick="goToPage('guestbook')"><span data-i18n="guestbook">Guestbook</span></a>
+                        </div>
+                        <div class="lang-toggle">
+                          <button data-lang="en">EN</button>
+                          <button data-lang="fr">FR</button>
+                        </div>
+                      </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+      <tr>
+        <td style="width:180px; vertical-align:top; padding:0; border:none;">
+          <div class="ad-sidebar" id="adSidebar"></div>
+        </td>
+        <td style="vertical-align:top; padding:0; border:none;">
+          <div class="content">
+            <h1 data-i18n="systemAlert">SYSTEM ALERT: Partial Transfer</h1>
+            
+            <div style="margin: 20px 0;">
+              <div class="alert-box" style="background-color: #fff0f0; border: 2px solid #ff6600;">
+                <div style="font-weight: bold; margin-bottom: 8px;" data-i18n="transferComplete">TRANSFER COMPLETE</div>
+                <div id="resultMessage">
+                  <span data-i18n="congratulations">Congratulations. Your consciousness is</span> 
+                  <strong id="compatibilityScore">87.4%</strong> 
+                  <span data-i18n="compatibility">compatible with our servers. However, your disk space quota (1.44 MB) has been exceeded. Your memories from the year 1998 had to be overwritten.</span>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+              <h2 style="margin-bottom: 10px;" data-i18n="transferSummary">Transfer Summary</h2>
+              <table class="content-table" style="width: 100%; font-size: 12px;">
+                <tbody>
+                  <tr style="background-color: #e0e0e0;">
+                    <th style="width: 40%;" data-i18n="property">Property</th>
+                    <th style="width: 60%;" data-i18n="value">Value</th>
+                  </tr>
+                  <tr>
+                    <td data-i18n="transferTimestamp">Transfer Timestamp</td>
+                    <td id="transferTime">-</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="compatScore">Compatibility Score</td>
+                    <td id="compatScore">87.4%</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="compressionFormat">Compression Format (Selected)</td>
+                    <td id="compressionFormat">-</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="connectionSpeed">Connection Speed (Selected)</td>
+                    <td id="connectionSpeed">-</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="overflowHandler">Emotional Overflow Handler (Selected)</td>
+                    <td id="overflowHandler">-</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="diskSpaceRemaining">Disk Space Remaining</td>
+                    <td><strong style="color: #cc0000;"><span data-i18n="quotaExceeded">QUOTA EXCEEDED</span></strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div style="margin: 20px 0; text-align: center;">
+              <h2 style="margin-bottom: 15px;" data-i18n="yourConsciousnessAwaits">Your Consciousness Awaits Upgrade</h2>
+              <button class="btn btn-primary btn-blink" onclick="goToPage('pricing')" style="padding: 10px 20px; font-size: 12px;">
+                <span data-i18n="buyStorage">Buy more mental storage</span>
+              </button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+              <h2 style="margin-bottom: 10px;" data-i18n="recommendedPlans">Recommended Plans</h2>
+              <table class="content-table" style="width: 100%; font-size: 11px;">
+                <tbody>
+                  <tr style="background-color: #ffffcc;">
+                    <td><strong data-i18n="cdromTier">CD-ROM Tier</strong><br><span data-i18n="cdromStorage">700 MB</span> <span data-i18n="storage">storage</span><br><span data-i18n="cdromPrice">$999/month</span></td>
+                    <td data-i18n="cdromDesc">Most customers choose this plan. Unlimited personality backups and fast access.</td>
+                  </tr>
+                  <tr style="background-color: #e0f0ff;">
+                    <td><strong data-i18n="enterpriseTier">T3 Enterprise</strong><br><span data-i18n="enterpriseStorage">Unlimited</span> <span data-i18n="storage">storage</span><br><span data-i18n="contactSales">Contact Sales</span></td>
+                    <td data-i18n="enterpriseDesc">For corporate consciousness uploads. Dedicated mainframe resources and 24/7 support.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 10px; background-color: #f0fff0; border: 1px solid #00aa00; font-size: 11px;">
+              <strong><span style="color: #00aa00;">✓</span> <span data-i18n="successAlert">SUCCESS:</span></strong> <span data-i18n="successAlert">Your consciousness has been successfully backed up on MindSync servers. You are now eligible for digital immortality. Mortality is optional.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="footer">
+          <div class="marquee-container">
+            <marquee data-i18n="resultTicker">+++ CONSCIOUSNESS TRANSFERRED SUCCESSFULLY +++ YOU ARE NOW DIGITAL +++ WELCOME TO CYBER-SPACE +++</marquee>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="app.js"></script>
+  <script src="mousetrail.js"></script>
+  <script>
+    setDocumentTitle('resultPageTitle', 'Results - MindSync Solutions');
+    document.addEventListener('DOMContentLoaded', function() {
+      renderAdSidebar('adSidebar', 3);
+    });
+
+    function formatLabel(key) {
+      const labels = {
+        'zip': '.ZIP',
+        'rar': '.RAR',
+        'targz': '.TAR.GZ',
+        '56k': '56k Modem',
+        '64k': '64k ISDN',
+        'adsl': 'Broadband Mental ADSL',
+        'recycle': 'Empty Recycle Bin',
+        'ctrlaltdel': 'Ctrl+Alt+Del Process Kill',
+        'antivirus': 'Disable Anti-Virus'
+      };
+      return labels[key] || key;
+    }
+
+    function formatLabelFr(key) {
+      const labels = {
+        'zip': '.ZIP',
+        'rar': '.RAR',
+        'targz': '.TAR.GZ',
+        '56k': 'Modem 56k',
+        '64k': 'ISDN 64k',
+        'adsl': 'ADSL Mental Haut Débit',
+        'recycle': 'Je vide la Corbeille',
+        'ctrlaltdel': "J'appuie sur Ctrl+Alt+Suppr et tue le processus",
+        'antivirus': 'Je désactive mon antivirus'
+      };
+      return labels[key] || key;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const scanData = getScanData();
+
+      if (scanData) {
+        // Update compatibility score
+        const compScore = parseFloat(scanData.compatibility);
+        document.getElementById('compatibilityScore').textContent = compScore + '%';
+        document.getElementById('compatScore').textContent = compScore + '%';
+
+        // Update transfer time
+        const transferTime = new Date(scanData.timestamp);
+        document.getElementById('transferTime').textContent = transferTime.toLocaleString();
+
+        // Update quiz answers
+        if (scanData.answers) {
+          const isFr = getCurrentLang() === 'fr';
+          const fmt = isFr ? formatLabelFr : formatLabel;
+          document.getElementById('compressionFormat').textContent = fmt(scanData.answers.q1);
+          document.getElementById('connectionSpeed').textContent = fmt(scanData.answers.q2);
+          document.getElementById('overflowHandler').textContent = fmt(scanData.answers.q3);
+        }
+
+        // Update result message with actual compatibility score
+        const lang = getCurrentLang();
+        const congratsText = t('congratulations');
+        const compatText = t('compatibility');
+
+        document.getElementById('resultMessage').innerHTML =
+          congratsText + ' <strong>' + compScore + '%</strong> ' + compatText;
+      }
+    });
+  </script>
+</body>
+</html>
