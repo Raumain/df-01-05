@@ -642,10 +642,7 @@ body.splash {
 /* Windows-style dialog popup */
 .virus-popup.windows-error .popup-window,
 .virus-popup.system-alert .popup-window {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 350px;
   background: #c0c0c0;
   border: 3px outset #dfdfdf;
@@ -654,10 +651,7 @@ body.splash {
 
 .virus-popup.norton-alert .popup-window,
 .virus-popup.mcafee-alert .popup-window {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 380px;
   background: #c0c0c0;
   border: 3px outset #dfdfdf;

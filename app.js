@@ -745,6 +745,11 @@ const virusPopupManager = {
     popup.innerHTML = html;
     document.body.appendChild(popup);
     
+    // Calculate random position that keeps popup fully visible
+    setTimeout(() => {
+      this.positionPopupRandomly(popup, id, style);
+    }, 0);
+    
     // Add event listeners
     const closeButtons = popup.querySelectorAll('[data-popup-id="' + id + '"]');
     closeButtons.forEach(btn => {
@@ -760,6 +765,43 @@ const virusPopupManager = {
     if (okBtn) {
       okBtn.addEventListener('click', () => this.closePopup(id));
     }
+  },
+
+  positionPopupRandomly: function(popup, id, style) {
+    const rect = popup.getBoundingClientRect();
+    const popupWidth = rect.width || 350; // Default width
+    const popupHeight = rect.height || 200; // Default height
+    
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Calculate safe boundaries (with 10px padding)
+    const padding = 10;
+    const maxX = viewportWidth - popupWidth - padding;
+    const maxY = viewportHeight - popupHeight - padding;
+    
+    // Ensure minimum 10px from edges
+    const minX = padding;
+    const minY = padding;
+    
+    // Calculate random position within safe boundaries
+    let randomX, randomY;
+    
+    if (style === 'norton-alert' || style === 'mcafee-alert') {
+      // For banner alerts, keep them at top with random horizontal position
+      randomX = Math.random() < 0.5 ? padding : Math.max(minX, maxX - 20);
+      randomY = padding + Math.random() * 40; // Slight vertical variation at top
+    } else {
+      // For dialog boxes, truly random position within safe area
+      randomX = Math.max(minX, Math.floor(Math.random() * maxX));
+      randomY = Math.max(minY, Math.floor(Math.random() * maxY));
+    }
+    
+    // Apply position
+    popup.style.position = 'fixed';
+    popup.style.left = randomX + 'px';
+    popup.style.top = randomY + 'px';
+    popup.style.transform = 'none'; // Override any transform
   },
 
   closePopup: function(id) {
