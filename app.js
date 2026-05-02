@@ -173,6 +173,11 @@ const i18n = {
     storeDisclaimer: 'MindSync Store products are functional. But we are not responsible of how you use them...',
     storeDisclaimerTitle: 'DISCLAIMER:',
 
+    // Guestbook page
+    guestbookTitle: 'Client Testimonials',
+    guestbookDescription: 'Read what our synergized clients have to say about their new digital existence!',
+    guestbookPageTitle: 'Guestbook - MindSync Solutions',
+
     // Virus Ad Popups
     virusWarning1: '⚠ WARNING ⚠',
     virusMessage1: 'Your system has detected 7 CRITICAL ERRORS! Your hard drive may be corrupted. Click the button below to scan now!',
@@ -357,6 +362,11 @@ const i18n = {
     buyNow: 'Acheter Maintenant',
     storeDisclaimer: 'Les produits du MindSync Store sont fonctionnels. Mais nous ne sommes pas responsables de la façon dont vous les utilisez',
     storeDisclaimerTitle: 'CLAUSE DE NON-RESPONSABILITÉ :',
+
+    // Guestbook page
+    guestbookTitle: 'Avis des Clients',
+    guestbookDescription: 'Découvrez ce que nos clients synergisés ont à dire sur leur nouvelle existence numérique !',
+    guestbookPageTitle: 'Avis - Solutions MindSync',
 
     // Virus Ad Popups
     virusWarning1: '⚠ AVERTISSEMENT ⚠',
