@@ -57,51 +57,7 @@
                             digital existence!</p>
 
                         <table class="content-table" style="width: 100%; font-size: 12px; margin-top: 20px;">
-                            <tbody>
-                                <tr>
-                                    <td style="width: 150px; vertical-align: top;">
-                                        <strong data-i18n="guest1Name">xX_CyberDude_Xx</strong><br>
-                                        <span style="font-size: 12px;" data-i18n="guest1Date">Date: 2001-03-15</span>
-                                    </td>
-                                    <td>
-                                        <p data-i18n="guest1Comment">"MindSync is AWESOME! I haven't eaten or slept in
-                                            three weeks. My productivity is through the roof. I even forgot what my
-                                            physical body looked like lol. 10/10 would upload again."</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: top;">
-                                        <strong data-i18n="guest2Name">CEOBillionaire_78</strong><br>
-                                        <span style="font-size: 12px;" data-i18n="guest2Date">Date: 2000-11-02</span>
-                                    </td>
-                                    <td>
-                                        <p data-i18n="guest2Comment">"A paradigm shift in human potential. My entire
-                                            board of directors has been synergized. Our quarterly reports are now
-                                            generated in 0.02 seconds. This is the future of business."</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: top;">
-                                        <strong data-i18n="guest3Name">-=Lara_C.=-</strong><br>
-                                        <span style="font-size: 12px;" data-i18n="guest3Date">Date: 2002-01-20</span>
-                                    </td>
-                                    <td>
-                                        <p data-i18n="guest3Comment">"My consciousness transfer was only 87.4% complete
-                                            and I feel great! Sure, I can't remember my childhood, but the free 1.44 MB
-                                            of mental storage is totally worth it. The pop-up ads in my thoughts are a
-                                            bit annoying though."</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: top;">
-                                        <strong data-i18n="guest4Name">Admin</strong><br>
-                                        <span style="font-size: 12px;" data-i18n="guest4Date">Date: 1999-12-31</span>
-                                    </td>
-                                    <td>
-                                        <p data-i18n="guest4Comment">"This guestbook is now CLOSED to new entries to
-                                            prevent spam. Thanks for all the great memories!"</p>
-                                    </td>
-                                </tr>
+                            <tbody id="guestbookComments">
                             </tbody>
                         </table>
                     </div>
@@ -117,12 +73,31 @@
         </tbody>
     </table>
 
+    <script src="comments.js"></script>
     <script src="app.js"></script>
     <script src="mousetrail.js"></script>
     <script>
+        function renderGuestbookComments() {
+            const tbody = document.getElementById('guestbookComments');
+            guestbookComments.forEach(comment => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td style="width: 150px; vertical-align: top;">
+                        <strong>${comment.name}</strong><br>
+                        <span style="font-size: 12px;">Date: ${comment.date}</span>
+                    </td>
+                    <td>
+                        <p>"${comment.comment}"</p>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
         setDocumentTitle('guestbookPageTitle', 'MindSync Solutions ::: Guestbook');
         document.addEventListener('DOMContentLoaded', function () {
             renderAdSidebar('adSidebar', 3);
+            renderGuestbookComments();
         });
     </script>
 
