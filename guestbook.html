@@ -79,15 +79,19 @@
     <script>
         function renderGuestbookComments() {
             const tbody = document.getElementById('guestbookComments');
+            const lang = getCurrentLang();
             guestbookComments.forEach(comment => {
                 const row = document.createElement('tr');
+                const commentText = typeof comment.comment === 'string' 
+                    ? comment.comment 
+                    : (comment.comment[lang] || comment.comment['en']);
                 row.innerHTML = `
                     <td style="width: 150px; vertical-align: top;">
                         <strong>${comment.name}</strong><br>
                         <span style="font-size: 12px;">Date: ${comment.date}</span>
                     </td>
                     <td>
-                        <p>"${comment.comment}"</p>
+                        <p>"${commentText}"</p>
                     </td>
                 `;
                 tbody.appendChild(row);
