@@ -172,6 +172,18 @@ const i18n = {
     buyNow: 'Buy Now',
     storeDisclaimer: 'MindSync Store products are functional. But we are not responsible of how you use them...',
     storeDisclaimerTitle: 'DISCLAIMER:',
+
+    // Virus Ad Popups
+    virusWarning1: '⚠ WARNING ⚠',
+    virusMessage1: 'Your system has detected 7 CRITICAL ERRORS! Your hard drive may be corrupted. Click the button below to scan now!',
+    virusWarning2: 'NORTON ANTIVIRUS ALERT',
+    virusMessage2: 'Dangerous spyware detected! Your computer is at risk. Quarantine threats immediately?',
+    virusWarning3: 'SYSTEM ALERT',
+    virusMessage3: 'Your Internet connection is being used to send SPAM! Disable the spyware now!',
+    virusWarning4: 'McAFEE SECURITY CENTER',
+    virusMessage4: 'ALERT: Virus.Win32.Nasty detected in C:\\Windows\\System32. Immediate action required!',
+    virusWarning5: 'CRITICAL ERROR',
+    virusMessage5: 'Your PC is running slowly! Download MindSync Speed Booster to fix this NOW!',
   },
   fr: {
     // Navigation
@@ -345,6 +357,18 @@ const i18n = {
     buyNow: 'Acheter Maintenant',
     storeDisclaimer: 'Les produits du MindSync Store sont fonctionnels. Mais nous ne sommes pas responsables de la façon dont vous les utilisez',
     storeDisclaimerTitle: 'CLAUSE DE NON-RESPONSABILITÉ :',
+
+    // Virus Ad Popups
+    virusWarning1: '⚠ AVERTISSEMENT ⚠',
+    virusMessage1: 'Votre système a détecté 7 ERREURS CRITIQUES ! Votre disque dur peut être corrompu. Cliquez sur le bouton ci-dessous pour analyser maintenant !',
+    virusWarning2: 'ALERTE NORTON ANTIVIRUS',
+    virusMessage2: 'Spyware dangereux détecté ! Votre ordinateur est en danger. Mettre en quarantaine les menaces immédiatement ?',
+    virusWarning3: 'ALERTE SYSTÈME',
+    virusMessage3: 'Votre connexion Internet est utilisée pour envoyer du SPAM ! Désactivez le spyware maintenant !',
+    virusWarning4: 'CENTRE DE SÉCURITÉ McAFEE',
+    virusMessage4: 'ALERTE : Virus.Win32.Nasty détecté dans C:\\Windows\\System32. Action immédiate requise !',
+    virusWarning5: 'ERREUR CRITIQUE',
+    virusMessage5: 'Votre PC fonctionne lentement ! Téléchargez MindSync Speed Booster pour corriger cela MAINTENANT !',
   }
 };
 
@@ -628,3 +652,131 @@ function setupLanguageToggle() {
     });
   });
 }
+
+// ============ VIRUS AD POPUP MANAGER ============
+
+const virusPopupManager = {
+  isActive: true,
+  popupQueue: [],
+  currentPopupId: null,
+  lastPopupTime: 0,
+  minInterval: 10000, // 10 seconds minimum
+  maxInterval: 15000, // 15 seconds maximum
+
+  // Virus ad types with styling variations
+  popupTypes: [
+    { style: 'windows-error', titleKey: 'virusWarning1', messageKey: 'virusMessage1' },
+    { style: 'norton-alert', titleKey: 'virusWarning2', messageKey: 'virusMessage2' },
+    { style: 'system-alert', titleKey: 'virusWarning3', messageKey: 'virusMessage3' },
+    { style: 'mcafee-alert', titleKey: 'virusWarning4', messageKey: 'virusMessage4' },
+    { style: 'windows-error', titleKey: 'virusWarning5', messageKey: 'virusMessage5' },
+  ],
+
+  init: function() {
+    if (!this.isActive) return;
+    this.scheduleNextPopup();
+  },
+
+  scheduleNextPopup: function() {
+    if (!this.isActive) return;
+    const delay = Math.random() * (this.maxInterval - this.minInterval) + this.minInterval;
+    setTimeout(() => this.showRandomPopup(), delay);
+  },
+
+  getRandomPopupType: function() {
+    return this.popupTypes[Math.floor(Math.random() * this.popupTypes.length)];
+  },
+
+  showRandomPopup: function() {
+    if (!this.isActive) return;
+    
+    const popupType = this.getRandomPopupType();
+    const title = t(popupType.titleKey);
+    const message = t(popupType.messageKey);
+    const popupId = 'virus-popup-' + Date.now();
+    
+    this.createPopup(popupId, title, message, popupType.style);
+    this.currentPopupId = popupId;
+    this.lastPopupTime = Date.now();
+    
+    // Schedule next popup
+    this.scheduleNextPopup();
+  },
+
+  createPopup: function(id, title, message, style) {
+    // Create popup container
+    const popup = document.createElement('div');
+    popup.id = id;
+    popup.className = 'virus-popup ' + style;
+    
+    // Create popup content
+    let html = '';
+    
+    if (style === 'windows-error' || style === 'system-alert') {
+      // Windows dialog style
+      html = `
+        <div class="popup-window">
+          <div class="popup-title-bar">
+            <span class="popup-title">${title}</span>
+            <button class="popup-close" data-popup-id="${id}">×</button>
+          </div>
+          <div class="popup-content">
+            <div class="popup-icon">⚠</div>
+            <div class="popup-message">${message}</div>
+          </div>
+          <div class="popup-buttons">
+            <button class="popup-btn" data-popup-id="${id}">OK</button>
+          </div>
+        </div>
+      `;
+    } else {
+      // Alert/banner style
+      html = `
+        <div class="popup-banner">
+          <div class="popup-header">
+            <strong>${title}</strong>
+            <button class="popup-close" data-popup-id="${id}">×</button>
+          </div>
+          <div class="popup-message">${message}</div>
+        </div>
+      `;
+    }
+    
+    popup.innerHTML = html;
+    document.body.appendChild(popup);
+    
+    // Add event listeners
+    const closeButtons = popup.querySelectorAll('[data-popup-id="' + id + '"]');
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.closePopup(id);
+      });
+    });
+    
+    // Add click-to-close on OK button if exists
+    const okBtn = popup.querySelector('.popup-btn');
+    if (okBtn) {
+      okBtn.addEventListener('click', () => this.closePopup(id));
+    }
+  },
+
+  closePopup: function(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+      popup.classList.add('closing');
+      setTimeout(() => {
+        popup.remove();
+        if (this.currentPopupId === id) {
+          this.currentPopupId = null;
+        }
+      }, 300);
+    }
+  }
+};
+
+// Initialize popups when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  virusPopupManager.init();
+});
