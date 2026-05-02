@@ -25,7 +25,7 @@
 ├── result.html      (Post-scan fake dashboard)
 ├── pricing.html     (Upload subscription plans)
 ├── style.css        (Single stylesheet for all pages)
-└── /assets
+└── /public
     ├── logo.gif
     ├── brain-map.jpg
     └── construction.gif

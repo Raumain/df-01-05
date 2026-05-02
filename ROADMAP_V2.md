@@ -13,7 +13,7 @@
 ├── pricing.html     
 ├── store.html       (NEW: Hardware e-commerce page)
 ├── style.css        
-└── /assets
+└── /public
     ├── logo.gif
     ├── brain-map.jpg
     ├── construction.gif

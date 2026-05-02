@@ -12,7 +12,7 @@ A satirical "consciousness uploading" B2C/B2B startup website built for the 2000
 ├── pricing.html     (Upload subscription plans)
 ├── style.css        (Shared 2000s styling)
 ├── app.js           (Shared application logic & i18n)
-└── /assets
+└── /public
     ├── logo.gif     (Optional - app gracefully handles missing images)
     ├── brain-map.jpg (Optional - app gracefully handles missing images)
     └── construction.gif (Optional - app gracefully handles missing images)

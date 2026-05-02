@@ -27,7 +27,7 @@ The complete MindSync Solutions website has been implemented according to the re
 ├── style.css        ✓ Complete
 ├── app.js           ✓ Complete
 ├── README.md        ✓ Complete
-└── /assets          ✓ Created (awaiting images)
+└── /public          ✓ Created (awaiting images)
 ```
 
 ## Key Implementation Features
@@ -112,7 +112,7 @@ All text is in `app.js` i18n object. Change values there to update all pages.
 Edit `style.css`. All styles are clear and maintainable (no preprocessor needed).
 
 ### Adding Images
-Place images in `/assets/` folder:
+Place images in `/public/` folder:
 - logo.gif (50×50px)
 - brain-map.jpg (300×200px)
 - construction.gif (300×200px)
@@ -139,7 +139,7 @@ All 12 decision branches from the grilling session were implemented:
 The project is **production-ready** for demonstration and judging. All requirements from the refined roadmap have been implemented with attention to detail and authentic 2000s aesthetic.
 
 ### Next Steps
-1. Add actual image files (logo.gif, brain-map.jpg) to `/assets/` if desired
+1. Add actual image files (logo.gif, brain-map.jpg) to `/public/` if desired
 2. Open `index.html` in a browser to test the complete flow
 3. Try the EN/FR language toggle on any page
 4. Share the `/mindsync/` directory with the hackathon organizers

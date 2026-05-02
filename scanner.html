@@ -17,7 +17,7 @@
               <tr>
                 <td style="width:60px; padding:8px; border:none; vertical-align:middle;">
                   <div class="logo-placeholder">
-                    <div style="font-size: 8px;"><img src="/assets/logo.png" width="100"></div>
+                    <div style="font-size: 8px;"><img src="/public/logo.png" width="100"></div>
                   </div>
                 </td>
                 <td style="padding:8px; border:none; vertical-align:middle;">
@@ -115,15 +115,15 @@
 
                 <div class="brain-map-container">
                   <!-- L'image du cerveau reliée à la map -->
-                  <img src="assets/brain.png" alt="Scanner de ciblage neuronal" usemap="#brainmap" border="2"
+                  <img src="public/brain.png" alt="Scanner de ciblage neuronal" usemap="#brainmap" border="2"
                     style="border-color: #00FF00; width: 800px;">
 
                   <!-- La map avec les zones cliquables -->
                   <map name="brainmap">
 
                     <!-- Zone Cyan : Le Lobe Frontal (La bonne réponse qui déclenche la suite) -->
-                    <area shape="poly" coords="280,90, 410,60, 440,200, 280,285, 230,260, 200,200" href="#" alt="Lobe Frontal"
-                      title="Cibler le Lobe Frontal (Zone Cyan)" id="frontal-lobe-click"
+                    <area shape="poly" coords="280,90, 410,60, 440,200, 280,285, 230,260, 200,200" href="#"
+                      alt="Lobe Frontal" title="Cibler le Lobe Frontal (Zone Cyan)" id="frontal-lobe-click"
                       onclick="handleBrainLobeClick('frontal'); return false;"
                       onmouseover="window.status='CIBLAGE: LOBE FRONTAL - PRET POUR UPLOAD'; return true;"
                       onmouseout="window.status=''; return true;">
@@ -134,8 +134,8 @@
                       onclick="alert('ERREUR SYSTÈME : Accès au Lobe Pariétal refusé. Vos capacités motrices risquent d\'être effacées. Ciblez le Lobe Frontal.');">
 
                     <!-- Zone Verte : Le Lobe Occipital (Mauvaise zone) -->
-                    <area shape="poly" coords="560,200, 600,200, 580,290, 540,300, 540,240" href="#" alt="Lobe Occipital"
-                      title="Cibler le Lobe Occipital (Zone Verte)"
+                    <area shape="poly" coords="560,200, 600,200, 580,290, 540,300, 540,240" href="#"
+                      alt="Lobe Occipital" title="Cibler le Lobe Occipital (Zone Verte)"
                       onclick="alert('ERREUR 404 : Zone de la mémoire visuelle saturée par des images de chats. Veuillez cibler le Lobe Frontal.');">
 
                     <!-- Zone Orange : Le Hub Temporal (Mauvaise zone) -->
@@ -150,7 +150,7 @@
                     <div style="padding:10px;">
                       <div style="font-weight:bold;">Brain Map</div>
                       <!-- L'image du cerveau reliée à la map -->
-                      <img src="assets/brain.png" alt="Scanner de ciblage neuronal" usemap="#brainmap" border="2"
+                      <img src="public/brain.png" alt="Scanner de ciblage neuronal" usemap="#brainmap" border="2"
                         style="border-color: #0000FF;">
 
                       <!-- La map avec les zones cliquables -->
@@ -178,27 +178,28 @@
               <div style="margin-bottom: 20px; padding: 12px; background-color: #f0f0f0; border: 1px solid #999;">
                 <h2 style="font-size: 12px; font-weight: bold; color: #000080; margin-bottom: 10px;"
                   data-i18n="retinaTitle">> Biometric Authentication Required </h2>
-                    <p style="font-size: 11px; margin-bottom: 12px;" data-i18n="retinaDesc">Initiate retina scan to
-                      verify your consciousness signature.</p>
-                    <div style="text-align: center;">
-                      <button class="btn btn-primary" id="startRetinaBtn" onclick="startRetinaScan()"
-                        style="padding: 8px 16px;" data-i18n="retinaButtonLabel">Start Retina Scan</button>
-                    </div>
-                    <div id="retinaContainer" style="display: none; position: relative; margin-top: 12px; text-align: center;">
-                      <div id="retinaScanOverlay">
-                        <video id="retinaVideo"
-                        style="width: 200px; height: 150px; border: 3px solid #000; position: absolute; top: 0; background-color: #000; display: block; margin: 0 auto; margin-bottom: 10px;"></video>
-                        <div
-                          style="height: 150px; background-color: transparent; position: absolute; border: 3px solid #000; position: relative; overflow: hidden;">
-                          <div id="retinaLine"
-                            style="position: absolute; width: 100%; height: 2px; background-color: #0f0; top: 0; animation: scanLine 3.5s linear;">
-                          </div>
-                        </div>
+                <p style="font-size: 11px; margin-bottom: 12px;" data-i18n="retinaDesc">Initiate retina scan to
+                  verify your consciousness signature.</p>
+                <div style="text-align: center;">
+                  <button class="btn btn-primary" id="startRetinaBtn" onclick="startRetinaScan()"
+                    style="padding: 8px 16px;" data-i18n="retinaButtonLabel">Start Retina Scan</button>
+                </div>
+                <div id="retinaContainer"
+                  style="display: none; position: relative; margin-top: 12px; text-align: center;">
+                  <div id="retinaScanOverlay">
+                    <video id="retinaVideo"
+                      style="width: 200px; height: 150px; border: 3px solid #000; position: absolute; top: 0; background-color: #000; display: block; margin: 0 auto; margin-bottom: 10px;"></video>
+                    <div
+                      style="height: 150px; background-color: transparent; position: absolute; border: 3px solid #000; position: relative; overflow: hidden;">
+                      <div id="retinaLine"
+                        style="position: absolute; width: 100%; height: 2px; background-color: #0f0; top: 0; animation: scanLine 3.5s linear;">
                       </div>
                     </div>
-                    <div id="retinaSuccess"
-                      style="display: none; margin-top: 10px; padding: 8px; background-color: #f0fff0; border: 1px solid #00aa00; color: #00aa00; font-size: 11px; font-weight: bold; text-align: center;"
-                      data-i18n="retinaSuccess">[RETINA MATCH FOUND]</div>
+                  </div>
+                </div>
+                <div id="retinaSuccess"
+                  style="display: none; margin-top: 10px; padding: 8px; background-color: #f0fff0; border: 1px solid #00aa00; color: #00aa00; font-size: 11px; font-weight: bold; text-align: center;"
+                  data-i18n="retinaSuccess">[RETINA MATCH FOUND]</div>
               </div>
 
               <!-- Upload Section -->

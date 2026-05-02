@@ -377,49 +377,49 @@ const adDatabase = [
     id: 'visitor1m',
     title: 'ad1Title',
     text: 'ad1Text',
-    image: 'assets/visitor.png',
+    image: 'public/visitor.png',
     variant: 1
   },
   {
     id: 'ram-boost',
     title: 'ad2Title',
     text: 'ad2Text',
-    image: 'assets/ram.png',
+    image: 'public/ram.png',
     variant: 2
   },
   {
     id: 'cyborg-dating',
     title: 'ad3Title',
     text: 'ad3Text',
-    image: 'assets/cyborg.png',
+    image: 'public/cyborg.png',
     variant: 3
   },
   {
     id: 'helmet-kit',
     title: 'ad5Title',
     text: 'ad5Text',
-    image: 'assets/casque.png',
+    image: 'public/casque.png',
     variant: 2
   },
   {
     id: 'cranial-needles',
     title: 'ad6Title',
     text: 'ad6Text',
-    image: 'assets/needles.png',
+    image: 'public/needles.png',
     variant: 3
   },
   {
     id: 'consciousness-insurance',
     title: 'ad7Title',
     text: 'ad7Text',
-    image: 'assets/insurance.png',
+    image: 'public/insurance.png',
     variant: 1
   },
   {
     id: 'synapse-upgrade',
     title: 'ad9Title',
     text: 'ad9Text',
-    image: 'assets/logo.png',
+    image: 'public/logo.png',
     variant: 3
   }
 ];
